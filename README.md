@@ -1,3 +1,5 @@
 # Coding Interview
 
-## 자료구조
+## Data Structure
+
+- [Array](./DataStructure/Array/Array.md)
