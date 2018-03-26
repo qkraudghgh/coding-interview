@@ -24,7 +24,7 @@
 
 ## 운영체제의 5가지 구성요소
 - 크게 `Kernel`과 `Utility-Program`으로 나눈다.
-- ![components-of-os](./components-of-os.png)
+- ![components-of-os](./images/components-of-os.png)
 
 ### Kernel
 - 운영체제의 핵심
@@ -34,7 +34,7 @@
 - Kernel보다 더 빠른 실행이 필요하고 높은 수준의 보호가 필요한건 마이크로 프로그래밍하여 `ROM`이나 `PLA` 같은 칩으로 만들기도 하며 이를 `펌웨어(생긴건 하드웨어 내부적으론 프로그램)`라고 한다.
 
 ## System call이란?
-- ![system call](./system-call.png)
+- ![system call](./images/system-call.png)
 - Kernel 영역에 있는 프로그램만 할 수 있는 것들을(Disk I/O, Memory access) 유저 수준에서 사용하길 원할 때 System call을 하여 원하는 결과물을 얻을 수 있다.
 
 ## OS의 목적
@@ -70,7 +70,7 @@
 - 우선순위가 더 높은 인터럽트가 들어 왔을 때 중첩하여 처리하기도 한다.
 
 ## 기억 장치의 계층적 구조
-- ![기억 장치의 계층적 구조](./disk.png)
+- ![기억 장치의 계층적 구조](./images/disk.png)
 - Access Time, 용량, 가격(bit당 단가)의 차이로 분류 가능
 - 속도가 높으면서 가격이 비싼게 있고, 속도가 느리고 가격이 싸며 용량이 높은 것들이 있으므로 용도에 맞게 저장장치를 계층적으로 잘 구성해야한다.
 
