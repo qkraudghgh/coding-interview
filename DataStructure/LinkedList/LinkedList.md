@@ -1,26 +1,26 @@
 # Linked Lists
   - Linked List는 각 노드가 데이터와 포인터를 가지고 한 줄로 연결되어 있는 방식으로 데이터를 저장하는 자료 구조이다.
   - Array처럼 고정된 크기를 가지고 있지 않다.
-  - 배열처럼 데이터가 물리적으로 연속되어 연결되어 있지 않다.
+  - Array처럼 데이터가 물리적으로 연속되어 연결되어 있지 않다.
   - 데이터 이외에 메모리 주소를 저장해야하므로 추가 메모리 공간이 필요하다.
-  - Insert/delete가 자주 일어난다면 배열보다 Linked List를 이용하는 것이 유리하다.
-    Linked List에서의 Insert/Delete는 포인터를 이용하기만 하면 되지만 배열은 Insert/Delete가 일어날 경우 실제 메모리에서 데이터의 Shift가 일어나기 때문
+  - Insert/delete가 Linked List의 중간에 자주 일어난다면 Array보다 Linked List를 이용하는 것이 유리하다.
+    Linked List에서의 Insert/Delete는 포인터를 이용하기만 하면 되지만 Array는 Insert/Delete가 일어날 경우 실제 메모리에서 데이터의 Shift가 일어나기 때문
 
 ## Singly Linked List
   - ![Singly linked list - wikipedia](./Singly_linked_list.png)
-  - Singly Linked List에서 각각의 Node는 자료와 다음 노드를 가르키는 포인터(Next)로 구성되어 있다.
+  - Singly Linked List에서 각각의 Node는 자료와 다음 Node를 가르키는 포인터(Next)로 구성되어 있다.
   - ![Head and Tail - DataStructure and Algorithm in Java, 6th Edition](./head-tail.png)
-  - `Head`는 Linked List의 첫 노드에 대한 포인터를 가지고 있다. 만약 Head가 가르키는 노드가 없다면 이를 통해 다른 노드를 찾을 방법이 없게된다.
-  - `Tail`은 Linked List이 마지막 노드에 대한 포인터를 가지고 있다.
-  - Tail은 Head부터 다음 노드로 탐색을 진행하며 Next가 `Null`인 노드를 찾음으로써 찾아낼 수 있다. (이렇게 Tail을 찾아내는 것을 link hopping이라고 함)
+  - `Head`는 Linked List의 첫 Node에 대한 포인터를 가지고 있다. 만약 Head가 가르키는 Node가 없다면 이를 통해 다른 Node를 찾을 방법이 없게된다.
+  - `Tail`은 Linked List이 마지막 Node에 대한 포인터를 가지고 있다.
+  - Tail은 Head부터 다음 Node로 탐색을 진행하며 Next가 `Null`인 Node를 찾음으로써 찾아낼 수 있다. (이렇게 Tail을 찾아내는 것을 link hopping이라고 함)
   - 일반적으로 Linked List에 Tail을 저장해 두어 매번 Tail을 찾는 탐색과정을 거치지 않게 한다.
   - Linked List의 size(length)또한 저장하고 유지하는 것이 일반적이다.
-  - 특정 노드를 찾기 위해서는 Head부터 순차적인 탐색이 필요하다. Time complexity `Θ(n)`
+  - 특정 Node를 찾기 위해서는 Head부터 순차적인 탐색이 필요하다. Time complexity `O(n)`
 
 ### Singly Linked List 구현
 #### Insert
   - addFirst(e) -> 첫번째 위치에 Node 추가
-  - Time complexity `Θ(1)`
+  - Time complexity `O(1)`
   ```
   Algorithm addFirst(e):
     newest = Node(e) ;; Node를 새로 만들고 newest에 저장
@@ -30,7 +30,7 @@
   ```
 
   - addLast(e) -> 마지막 위치에 Node 추가
-  - Time complexity `Θ(1)`
+  - Time complexity `O(1)`
   ```
   Algorithm addLast(e):
     newest = Node(e) ;; Node를 새로 만들고 newest에 저장
@@ -41,29 +41,29 @@
   ```
 
   - addBetween(e) -> 중간에 Node 추가
-  - Time complexity `Θ(n)`
-  - 탐색 시간 `Θ(n)` + insert하는 시간 `Θ(1)` = `Θ(n)`
+  - Time complexity `O(n)`
+  - 탐색 시간 `O(n)` + insert하는 시간 `O(1)` = `O(n)`
   ```
-  Algorithm addBetween(e, current): ;; 현재 위치 뒤에 노드 삽입
+  Algorithm addBetween(e, current): ;; 현재 위치 뒤에 Node 삽입
     newest = Node(e) ;; Node를 새로 만들고 newest에 저장
-    newest.next = current.next ;; 새로운 Node의 next가 현재 위치의 다음 노드를 가리키도록 함
-    current.next = newest ;; 현재 위치의 Node의 next가 새로운 노드를 가리키도록 함
+    newest.next = current.next ;; 새로운 Node의 next가 현재 위치의 다음 Node를 가리키도록 함
+    current.next = newest ;; 현재 위치의 Node의 next가 새로운 Node를 가리키도록 함
     size = size + 1
   ```
 
 #### Remove
   - removeFirst() -> 첫번째 Node 삭제
-  - Time complexity `Θ(1)`
+  - Time complexity `O(1)`
   ```
   Algorithm removeFirst()
     if head == null then
       the list is empty.
-    head = head.next = head를 Head다음 노드로 지정
+    head = head.next = head를 Head다음 Node로 지정
     size = size - 1
   ```
 
   - removeBetween(current) -> 중간 Node 삭제
-  - 탐색 시간 `Θ(n)` + delete하는 시간 `Θ(1)` = `Θ(n)`
+  - 탐색 시간 `O(n)` + delete하는 시간 `O(1)` = `O(n)`
   ```
   Algorithm removeBetween(current)
     if head == null then
@@ -98,12 +98,12 @@
 
 ```
 Algorithm insertNode(e, current): ;; 현재위치 바로뒤에 삽입
-  newest = Node(e) ;; 새로운 노드 생성
-  newest.next = current.next ;; 새로운 노드의 next를 현재 위치 노드의 다음 노드를 가리키도록
-  current.next = newest ;; 현재 위치의 노드 next가 새로운 노드를 가르키도록
-  newest.prev = current ;; 새로운 노드의 prev가 현재 위치 노드를 가르키도록
+  newest = Node(e) ;; 새로운 Node 생성
+  newest.next = current.next ;; 새로운 Node의 next를 현재 위치 Node의 다음 Node를 가리키도록
+  current.next = newest ;; 현재 위치의 Node의 next가 새로운 Node를 가르키도록
+  newest.prev = current ;; 새로운 Node의 prev가 현재 위치 Node를 가르키도록
   if newest.next != null then
-    newest.next.prev = newest ;; 현재 위치의 다음 노드의 prev가 새로운 노드를 가르키도록
+    newest.next.prev = newest ;; 현재 위치 다음 Node의 prev가 새로운 Node를 가르키도록
 ```
 
 #### Delete
