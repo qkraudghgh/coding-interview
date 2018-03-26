@@ -1,7 +1,7 @@
 # Linked Lists
   - Linked List는 각 노드가 데이터와 포인터를 가지고 한 줄로 연결되어 있는 방식으로 데이터를 저장하는 자료 구조이다.
   - Array처럼 고정된 크기를 가지고 있지 않다.
-  - 배열처럼 데이터가 물리적으로 연결되어 있지 않다.
+  - 배열처럼 데이터가 물리적으로 연속되어 연결되어 있지 않다.
   - 데이터 이외에 메모리 주소를 저장해야하므로 추가 메모리 공간이 필요하다.
   - Insert/delete가 자주 일어난다면 배열보다 Linked List를 이용하는 것이 유리하다.
     Linked List에서의 Insert/Delete는 포인터를 이용하기만 하면 되지만 배열은 Insert/Delete가 일어날 경우 실제 메모리에서 데이터의 Shift가 일어나기 때문
@@ -88,13 +88,13 @@
   ```
 
 ## Doubly Linked List
-  - ![Doubly Linked List - DataStructure and Algorithm in Java, 6th Edition](./doubly-linked-insert.png)
+  - ![Doubly Linked List - DataStructure and Algorithm in Java, 6th Edition](./doubly-linked-list.png)
   - Node에 next이외에 추가로 previous Node에대한 포인터를 저장함으로써 이전 Node에 접근이 가능하게 만든 Linked List
   - Previous Node의 주소를 저장해야해서 Singly Linked List보다 메모리를 더 사용한다.
 
 ### Doubly Linked List 구현
 #### Insert
-- ![Doubly Linked List Insert - DataStructure and Algorithm in Java, 6th Edition](./circular.png)
+- ![Doubly Linked List Insert - DataStructure and Algorithm in Java, 6th Edition](./doubly-linked-insert.png)
 
 ```
 Algorithm insertNode(e, current): ;; 현재위치 바로뒤에 삽입

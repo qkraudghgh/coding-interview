@@ -12,7 +12,7 @@
   - 일반적으로 필요한 size보다 큰 static array를 만들어쓰는 방식으로 Dynamic Array를 구성 할 수 있다.
   - 단순히 static array의 size를 필요한 size보다 크게 만든다고 Dynamic Array가 되는 것은 아님
   - size는 Element가 적재되어 있는 논리적 크기인 `size`와 최대 이용가능한 물리적 size인 `capacity`로 나누어 볼 수 있다.
-  - Dynamic Array에서 더 큰 capacity의 array의 필요성이 생기면 새롭고 더 큰 static array를 만들어 기존에 있던 배열을 통째로 복사해 옮기는 방식으로 capacity를 늘린다.(e.g. Java ArrayList)
+  - Dynamic Array에서 더 큰 capacity의 array의 필요성이 생기면 더 큰 capacity의 static array를 새로 만들어 기존에 있던 배열을 통째로 복사해 옮기는 방식으로 capacity를 늘린다.(e.g. Java ArrayList)
 
 ## Dynamic Array에서의 Insert / Delete
   - ![Dynamic Array Insert](./shift.png)
