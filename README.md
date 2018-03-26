@@ -3,10 +3,10 @@
 
 ## Data Structure
 - [Array](./DataStructure/Array/Array.md)
-- [LinkedList](./DataStructure/Linkedlist/LinkedList.md)
+- [LinkedList](./DataStructure/LinkedList/LinkedList.md)
 
 ## OS
 > OS는 [OS? Oh Yes!](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=4412844)라는 책을 보며 공부하고 궁금한 부분은 추가하여 작성중입니다.
-- [OS란?](./OS/WhatIsOs.md)
+- [OS란?](./OS/WhatIsOS.md)
 - [프로세스와 스레드](./OS/ProcessAndThread.md)
 - [CPU 스케줄링](./OS/CPUScheduling.md)
