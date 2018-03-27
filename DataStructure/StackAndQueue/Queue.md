@@ -20,7 +20,7 @@
   - dequeue: first element의 index를 알고 있으므로 `O(1)`의 시간 복잡도를 가진다.
   - 문제점이 또 하나 있다. Array는 capacity가 정해져 있으므로 enqueue와 dequeue가 반복될 수록
     사용할 수 있는 공간이 점점 줄어든다. (enqueue 할 때 index를 늘리기만 하므로)
-  - ![enqueue 한계][./queue-data.png]
+  - ![enqueue 한계](./queue-data.png)
 - 그럼 enqeue또한 바꿔보자
   - Array를 circular하게 이용하기
   - Array가 가득차면 다시 Array의 첫 index부터 enqueue를 한다.
