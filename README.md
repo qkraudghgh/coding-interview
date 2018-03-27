@@ -12,3 +12,4 @@
 - [OS란?](./OS/WhatIsOS.md)
 - [프로세스와 스레드](./OS/ProcessAndThread.md)
 - [CPU 스케줄링](./OS/CPUScheduling.md)
+- [병행 프로세스와 동기화(뮤텍스, 세마포어)](./OS/Synchronization.md)
