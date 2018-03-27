@@ -1,5 +1,5 @@
 # Stacks
-- ![Stack](./Lifo-stack.png)
+- ![Stack](./Lifo_stack.png)
 - Stack은 LIFO(Last-In, First-Out) 방식으로 삽입되고 제거되는 자료구조이다.
 - 브라우저에서 방문 기록을 저장하는 방식 등 실제로 많이 사용되고 있는 자료구조
 - ADT(Abstract Data Type)
@@ -23,15 +23,15 @@ public class ArrayStack<E> implements Stack<E> {
     pubic int size() { return (t + 1) };
     public boolean isEmpty() { return (t == -1) };
     public void push(E e) throws IllegalStateException {// Time Comlexity O(1)
-        if(size() == data.length) throw new IllegalStateException("Stack is full");
+        if (size() == data.length) throw new IllegalStateException("Stack is full");
         data[++t] = e;
     }
     public E top() {
-        if(isEmpty()) return null;
+        if (isEmpty()) return null;
         return data[t];
     }
     public E pop() {// Time Comlexity O(1)
-        if(isEmpty()) return null;
+        if (isEmpty()) return null;
         E answer = data[t];
         data[t] = null; // null로 만들지 않아도 돌아가기야 하겠지만 GC를 위해서 이렇게 하는게 좋음
         t--;
