@@ -21,7 +21,7 @@
 
 ### Peterson Algorithm
 - 두 개의 프로세스만 상호배제를 할 수 있음
-``` clang
+``` c
 void p0() {
   while (true) {
     flag[0] = true;
@@ -56,7 +56,7 @@ End
 
 ### Lamport - Bakery Algorithm
 - n개의 프로세스에서 상호배제가 가능한 알고리즘
-``` clang
+``` c
 do {
   choosing[i] = true;
   number[i] = max(number[0], number[1],..., number[n-1]) + 1;
@@ -84,7 +84,7 @@ do {
 
 ### 하드웨어 명령어를 사용한 기법
 - `testandset`을 이용한 기법
-``` clang
+``` c
 boolean testandset(boolean &target) { /* 프로시저 처럼 표현해 놨지만 사실은 원자성을 가진 기계명령어임 */
   boolean rv = target;
   target = true;
@@ -109,7 +109,7 @@ void main() {
 }
 ```
 - `exchange` 혹은 `swap`을 이용한 기법
-``` clang
+``` c
 void exchange(boolean &r, boolean &m) { /* 프로시저 처럼 표현해 놨지만 사실은 원자성을 가진 기계명령어임 */
   boolean temp = r;
   r = m;
@@ -165,7 +165,7 @@ V(S): if (큐에서 대기중인 프로세스가 존재) then 그 중의 한 프
     시키므로써 CPU낭비를 줄일 수 있음
   - 단 프로세스를 대기 상태로 전환하는 비용이 발생하고, 임계영역이 짧을 경우 busy wait을 사용하는게 더 반응이
     빠르며, 대기중인 프로세스들의 다음 차례 선택에대한 기준이 없어서 기아를 유발할 수 있음
-``` clang
+``` c
 semaphore s = 1; /* */
 semaphore f = 0;
 semaphore e = n; /* buffer size */
@@ -213,3 +213,6 @@ void main() {
 - 모니터란 공유데이터들과 이들에 대한 임계영역들을 관리하는 소프트웨어 구성체이다.
 - 모니터로의 진입은 프로시저의 호출로 가능하고, 한 번에 하나 이하의 프로세스만이 모니터 내에 있게 함으로써
   `상호배제`를 자연스럽게 실현한다.
+
+## The Dining-Philosophers Problem (식사하는 철학자 문제)
+- 추후 추가
