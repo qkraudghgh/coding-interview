@@ -83,7 +83,6 @@
 - `N=n`인 Binary Tree인 경우 `heap`이라 불린다.
 
 ## Tree Traversal Algorithms
-![traversal](./traversal.jpeg)
 ### Depth-first Tree Traversal
 - 깊이 우선 탐색
 - 재귀적으로 leaf 노드까지 우선 방문하며 탐색한다.
