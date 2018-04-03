@@ -89,4 +89,4 @@ public class SortedPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
 ### Heap으로 구현
 - priority가 높거나 낮은 Node부터 제거해야하는 `Priority Queue` 특성상 Heap과 유사한 속성을 가지고 있다.
 - 때문에 대부분의 Priority Queue는 Heap으로 구현됨.
-- 자세한 내용은 ![Heap](../Tree/Heap.md) 참고
+- 자세한 내용은 [Heap](../Tree/Heap.md) 참고
