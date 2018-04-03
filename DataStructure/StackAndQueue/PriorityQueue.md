@@ -48,34 +48,34 @@ public class UnsortedPriorityQueue<K,V> extends AbstractPriorityQueue<K,V> {
 public class SortedPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
     private PositionalList<Entry<K, V>> list = new LinkedPositionalList<>();
 
-		public SortedPriorityQueue() { super(); }
-		public SortedPriorityQueue(Comparator<K> comp) { super(comp); }
+    public SortedPriorityQueue() { super(); }
+    public SortedPriorityQueue(Comparator<K> comp) { super(comp); }
+	
+    public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
+        checkKey(key);
+	Entry<K, V> newest = new PQEntry<>(key, value);
+	Position<Entry<K, V>> walk = list.last();
+	// Doubly Linked List로 구현하여 last node부터 거꾸로 탐색해 insert가 용이하도록 구현한다.
+	while (walk != null &amp;&amp; compare(newest, walk.getElement()) < 0)
+	    walk = list.before(walk);
+        if (walk == null)
+            list.addFirst(newest);
+	else
+            list.addAfter(walk, newest);
+	return newest;
+    }
+    
+    public Entry<K, V> min() {
+        if (list.isEmpty()) return null;
+	return list.first().getElement();
+    }
 
-		public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
-		    checkKey(key);
-				Entry<K, V> newest = new PQEntry<>(key, value);
-				Position<Entry<K, V>> walk = list.last();
-				// Doubly Linked List로 구현하여 last node부터 거꾸로 탐색해 insert가 용이하도록 구현한다.
-				while (walk != null &amp;&amp; compare(newest, walk.getElement()) < 0)
-				    walk = list.before(walk);
-				if (walk == null)
-				    list.addFirst(newest);
-				else
-				    list.addAfter(walk, newest);
-			  return newest;
-		}
+    public Entry<K, V> removeMin() {
+        if (list.isEmpty()) return null;
+	return list.remove(list.first());
+    }
 
-		public Entry<K, V> min() {
-		    if (list.isEmpty()) return null;
-				return list.first().getElement();
-		}
-
-		public Entry<K, V> removeMin() {
-		    if (list.isEmpty()) return null;
-				return list.remove(list.first());
-		}
-
-		public int size() { return list.size(); }
+    public int size() { return list.size(); }
 }
 ```
 
