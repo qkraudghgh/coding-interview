@@ -75,7 +75,40 @@
 8. process B의 메모리 반납
 ```
 
-TODO
+- 초기 free: `100 Mbyte`
+
+#### 최초 적합
+1. free -> `90 MByte`, used -> `A(10 MByte)`
+2. free -> `70 MByte`, used -> `A(10 MByte)` -> `B(20 MByte)`
+3. free -> `55 MByte`, used -> `A(10 MByte)` -> `B(20 MByte)` -> `C(15 MByte)`
+4. free -> `55 MByte` -> `15 MByte`, used -> `A(10 MByte)` -> `B(20 MByte)`
+5. free -> `55 MByte` -> `15 MByte` -> `10 MByte`, used -> `B(20 MByte)`
+6. free -> `5 MByte` -> `15 MByte` -> `10 MByte`, used -> `B(20 MByte)` -> `D(50 MByte)`
+7. free -> `5 MByte` -> `5 MByte` -> `10 MByte`, used -> `B(20 MByte)` -> `D(50 MByte)` -> `E(10 MByte)`
+8. free -> `5 MByte` -> `5 MByte` -> `10 MByte` -> `20 MByte`, used -> `D(50 MByte)` -> `E(10 MByte)`
+
+#### 최적 적합
+1. free -> `90 MByte`, used -> `A(10 MByte)`
+2. free -> `70 MByte`, used -> `A(10 MByte)` -> `B(20 MByte)`
+3. free -> `55 MByte`, used -> `A(10 MByte)` -> `B(20 MByte)` -> `C(15 MByte)`
+4. free -> `55 MByte` -> `15 MByte`, used -> `A(10 MByte)` -> `B(20 MByte)`
+5. free -> `55 MByte` -> `15 MByte` -> `10 MByte`, used -> `B(20 MByte)`
+6. free -> `5 MByte` -> `15 MByte` -> `10 MByte`, used -> `B(20 MByte)` -> `D(50 MByte)`
+7. free -> `5 MByte` -> `15 MByte`, used -> `B(20 MByte)` -> `D(50 MByte)` -> `E(10 MByte)`
+  - 최초 적합과 다르게 15 MByte의 빈 공간 대신 마지막 10 MByte의 빈 공간을 골랐다.
+8. free -> `5 MByte` -> `15 MByte` -> `20 MByte`, used -> `D(50 MByte)` -> `E(10 MByte)`
+
+#### 최악 적합
+1. free -> `90 MByte`, used -> `A(10 MByte)`
+2. free -> `70 MByte`, used -> `A(10 MByte)` -> `B(20 MByte)`
+3. free -> `55 MByte`, used -> `A(10 MByte)` -> `B(20 MByte)` -> `C(15 MByte)`
+4. free -> `55 MByte` -> `15 MByte`, used -> `A(10 MByte)` -> `B(20 MByte)`
+5. free -> `55 MByte` -> `15 MByte` -> `10 MByte`, used -> `B(20 MByte)`
+6. free -> `5 MByte` -> `15 MByte` -> `10 MByte`, used -> `B(20 MByte)` -> `D(50 MByte)`
+7. free -> `5 MByte` -> `5 MByte` -> `10 MByte`, used -> `B(20 MByte)` -> `D(50 MByte)` -> `E(10 MByte)`
+  - 최초 적합과 똑같은 결과가 되었지만 이는 똑같은 메커니즘으로 동작 한 것이 아니고 우연의 일치로 15 MByte의 빈 공간이
+    최악 적합의 대상이 되었다.
+8. free -> `5 MByte` -> `5 MByte` -> `10 MByte` -> `20 MByte`, used -> `D(50 MByte)` -> `E(10 MByte)`
 
 ## 메모리 병합
 - Hole이 많이 생기다보면 언젠간 작게 분할된 메모리 공간을 병합해야 할 일이 생긴다.
