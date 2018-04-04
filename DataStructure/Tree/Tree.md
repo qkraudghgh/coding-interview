@@ -57,7 +57,9 @@
   3. left child node가 right child node보다 순서가 앞선다.
 
 - internal node `v`의 왼쪽 또는 오른쪽 child를 root로 하는 subtree를 `v`의 left subtree, right subtree라고 한다.
-- 각 node가 0개의 child 혹은 2개의 child만을 가질때 이를 `full binary trees` 라고 한다.
+- 각 node가 leaf node를 제외하고 2개의 child를 가질때 이를 `full binary tree` 라고 한다.
+- 각 마지막 level을 제외한 모든 레벨이 완전히 채워지고 모든 node가 왼쪽 child부터 채워진 상태일때 `complete binary tree`라고 한다.
+
 
 - level이 n인 Binary Tree의 최대 node수는 `2^n-1`개이다. (root가 level 1부터 시작시)
 - Binary Tree의 leaf node의 개수는 degree가 2인 node의 개수 +1이다.
@@ -80,7 +82,6 @@
 
 - Array-based Binary Tree는 Tree의 모양에 따라 Array의 size가 결정된다.
 - Array의 length `N`, node의 개수 `n`일때 최악의 경우 `N = 2^n - 1`까지 될 수 있다. (공간 필요량이 너무 많다)
-- `N=n`인 Binary Tree인 경우 `heap`이라 불린다.
 
 ## Tree Traversal Algorithms
 ### Depth-first Tree Traversal
