@@ -53,6 +53,7 @@
 
 ### DNS에서 등록한 정보를 찾아내는 방법
 `www.example.co.kr`를 브라우저에 입력
+
 0. DNS 캐시와 hosts파일에 도메인 정보가 있는지 확인 (있으면 여기서 끝나고 없으면 1번으로)
 1. 가장 가까운 DNS 서버(로컬 DNS 서버)에 `www.example.co.kr` 도메인 정보 요청
 2. 로컬 DNS 서버엔 `www.example.co.kr`에 대한 정보가 없기 때문에 루트 DNS 서버에 다시 질의
