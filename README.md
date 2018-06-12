@@ -36,7 +36,10 @@
   3. [Buble Sort](./Interview/sorting/bubleSort.js)
   4. [Merge Sort](./Interview/sorting/mergeSort.js)
   5. [Heap Sort](./Interview/sorting/heapSort.js)
+  6. [Quick Sort](./Interview/sorting/quickSort.js)
 
 - Interview 예상 문제 개인적인 풀이
 > [https://github.com/JaeYeopHan/Interview_Question_for_Beginner](https://github.com/JaeYeopHan/Interview_Question_for_Beginner)에서 문제 발췌
   1. [week1](./Interview/question/week1.md)
+  2. [week2](./Interview/question/week2.md)
+  3. [week3](./Interview/question/week3.md)
