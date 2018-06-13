@@ -71,6 +71,8 @@ Partitioning이란 Pivot element를 기준으로 왼쪽은 Pivot보다 작거나
 
 Partitioning을 재귀적으로 진행하다보면 정렬이 완료된다.
 
+- [js로 구현한 quick sort](../sorting/quickSort.js)
+
 ----
 
 ### OS Solution
