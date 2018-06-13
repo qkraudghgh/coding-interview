@@ -43,3 +43,5 @@
   1. [week1](./Interview/question/week1.md)
   2. [week2](./Interview/question/week2.md)
   3. [week3](./Interview/question/week3.md)
+
+- [경험했던 면접 질문 및 답](./Interview/question/previous_interview.md)
