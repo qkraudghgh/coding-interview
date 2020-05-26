@@ -160,7 +160,7 @@ TCP는 3-way handshake라고 불리는 연결 동작과 4-way handshake라고 �
 2. 브라우저 캐시에서 DNS 레코드를 확인하여 IP주소를 찾음 (없다면 DNS resolver를 통해 IP주소를 알아냄)
 3. 브라우저가 서버와 TCP 연결을 시작함
 4. 브라우저가 웹 서버에 HTTP 요청을 보냄
-5. 서버가 요청을 처리하고 응담을 되돌려보냄
+5. 서버가 요청을 처리하고 응답을 되돌려보냄
 6. 브라우저는 서버가 보낸 HTML 내용을 표시
 
 - [what happens when you type an url in the browser and press enter](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a)
