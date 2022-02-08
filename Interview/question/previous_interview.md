@@ -58,7 +58,7 @@ Stable이다.
 출처: [http://bigocheatsheet.com/](http://bigocheatsheet.com/)
 
 1. sorting algorithm마다 expected되는 속도가 다르다.
-2. 속도가 아닌 Space Comlexity가 고려대상이 될 수 있다. Merge sort같은 경우 insertion sort나 selection sort에 비해 추가 메모리 공간을 사용하기 때문
+2. 속도가 아닌 Space Complexity(공간복잡도)가 고려대상이 될 수 있다. Merge sort같은 경우 insertion sort나 selection sort에 비해 추가 메모리 공간을 사용하기 때문
 3. Stable한지 안한지에 따라 사용되어야 할 sorting algorithm이 다를 수 있다.
 
 ----
